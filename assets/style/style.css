@@ -1,0 +1,9 @@
+.header__container p {
+  color: #000;
+}
+.header__container p span {
+  background: linear-gradient(91deg, #51bf26 2.58%, #e3ae0b 44.51%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}/*# sourceMappingURL=style.css.map */
