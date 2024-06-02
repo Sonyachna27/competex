@@ -1,11 +1,9 @@
-.header__container {
-  p {
-    color: #000;
-    & span {
-      background: linear-gradient(91deg, #51bf26 2.58%, #e3ae0b 44.51%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-}
+@import "./reset";
+@import "./mixin";
+@import "./root";
+
+@import "./header";
+@import "./footer";
+@import "./hero";
+@import "./advantages";
+@import "./about";
