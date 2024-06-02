@@ -1,0 +1,118 @@
+.accord {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+.accord-item {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid $--gray-text;
+  background-color: $--white;
+
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &:nth-last-of-type(1) {
+    border-bottom: 1px solid $--gray-text;
+  }
+  &-top {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+    @include titleH4;
+    padding: 20px 30px;
+    @media screen and (max-width: 767px) {
+      padding: 30px 20px;
+      gap: 20px;
+    }
+    @media screen and (max-width: 367px) {
+      gap: 20px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      white-space: pre-wrap;
+    }
+    & p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      white-space: pre-wrap;
+      margin-bottom: 0;
+      @media screen and (max-width: 367px) {
+        overflow-wrap: anywhere;
+      }
+    }
+    & .close {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      transition: all 0.3s linear;
+      background-color: $--black;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      & svg {
+        transform: rotate(45deg);
+        transition: 0.3s linear;
+		max-width: 25px;
+		max-height: 25px;
+      }
+    }
+  }
+  &-bottom {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    padding: 0px 30px;
+
+    & p {
+      @include text-regular;
+      margin-bottom: 0;
+    }
+  }
+}
+.accord-item:hover,
+.accord-item.active {
+  border: 0.5px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(to right, white, white), $--background;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box; /* will have no effect */
+}
+.accord-item.active .accord-item-bottom {
+  color: $--black;
+  opacity: 1;
+  max-height: 100vh;
+  overflow: visible;
+  padding: 30px;
+  margin-top: -30px;
+  border-radius: 0 0 10px 10px;
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+  }
+  @media screen and (max-width: 367px) {
+    padding: 10px;
+  }
+}
+// .accord-item:hover .accord-item-top svg path,
+// .accord-item:hover .accord-item-top svg circle {
+//   stroke: $--white;
+// }
+
+// .accord-item.active .accord-item-top svg path {
+//   stroke: $--primary;
+// }
+
+// .accord-item.active .accord-item-top svg circle {
+//   fill: $--white;
+//   stroke: $--white;
+// }
+
+.accord-item.active .accord-item-top svg {
+  transform: rotate(0deg);
+}
