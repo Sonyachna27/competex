@@ -1,0 +1,17 @@
+.faq__container{
+	display: flex;
+	@media screen and (max-width: 1023px) {
+		flex-direction: column;
+	  }
+}
+.faq__title{
+	width: 49%;
+	@media screen and (max-width: 1023px) {
+		width: 100%;
+		margin-bottom: 40px;
+	  }
+}
+.faq__accord{
+	width: 100%;
+	
+}
