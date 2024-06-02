@@ -71,4 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
+  // функція для аккордеону
+
+  const accordionItemsProduct = document.querySelectorAll(".accord-item");
+  if (accordionItemsProduct) {
+    accordionItemsProduct.forEach((item) => {
+      item.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    });
+  }
 });
