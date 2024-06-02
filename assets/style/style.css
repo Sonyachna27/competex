@@ -531,8 +531,8 @@ h3 {
   }
 }
 .accord-item-top .close {
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   border-radius: 5px;
   transition: all 0.3s linear;
   background-color: #0e0c15;
@@ -541,7 +541,7 @@ h3 {
   justify-content: center;
 }
 .accord-item-top .close svg {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   transition: 0.3s linear;
   max-width: 25px;
   max-height: 25px;
@@ -1468,4 +1468,27 @@ h3 {
     display: flex;
     flex-direction: column;
   }
+}
+
+.faq__container {
+  display: flex;
+}
+@media screen and (max-width: 1023px) {
+  .faq__container {
+    flex-direction: column;
+  }
+}
+
+.faq__title {
+  width: 49%;
+}
+@media screen and (max-width: 1023px) {
+  .faq__title {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.faq__accord {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
