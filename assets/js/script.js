@@ -34,26 +34,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //функція для слайдеру з фото на весь екран
 
-  const actionSliderInit = document.querySelector(".gallerySlider");
+  const actionSliderInit = document.querySelector(".aboutSlider");
+  var slides = document.querySelectorAll(".about-slide");
+  slides.forEach((slide, index) => {
+    if (index % 2 === 0) {
+      slide.classList.add("even");
+    } else {
+      slide.classList.add("odd");
+    }
+  });
+
   if (actionSliderInit) {
-    const sliderAction = new Swiper(".gallerySlider", {
+    const sliderAction = new Swiper(".aboutSlider", {
       slidesPerView: 1,
       spaceBetween: 10,
       watchOverflow: true,
       loop: true,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      speed: 3000,
+      //   autoplay: {
+      //     delay: 0,
+      //     disableOnInteraction: false,
+      //   },
+      //   speed: 3000,
       breakpoints: {
-        767: {
+        550: {
           slidesPerView: 2,
-          spaceBetween: 8,
+          spaceBetween: 20,
+        },
+        767: {
+          slidesPerView: 4,
+          spaceBetween: 20,
         },
         1023: {
-          slidesPerView: 4,
-          spaceBetween: 8,
+          slidesPerView: 6,
+          spaceBetween: 20,
         },
       },
     });
