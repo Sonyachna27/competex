@@ -1,6 +1,7 @@
 .about__top {
   text-align: center;
   align-items: center;
+  margin-bottom: 40px;
   & h2,
   & p {
     max-width: 79%;
@@ -16,3 +17,27 @@
   }
 }
 //
+.about__slider {
+  overflow: hidden;
+}
+.gallerySlider {
+  @media screen and (min-width: 1024px) {
+    margin-left: -19%;
+    margin-right: -19%;
+  }
+}
+.about-slide {
+  border-radius: 30px;
+  background-color: aliceblue;
+  aspect-ratio: 310 / 410;
+  & img {
+    border-radius: 30px;
+    aspect-ratio: 310 / 410;
+  }
+  &.odd img {
+    transform: rotate(-2deg);
+  }
+  &.even img {
+    transform: rotate(2deg);
+  }
+}
