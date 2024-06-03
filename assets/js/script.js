@@ -81,4 +81,64 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // функція для табів на сторінці галерея
+
+  const galleryNameImg = document.querySelectorAll(".gallery-image");
+  const galleryTabsBtn = document.querySelectorAll(
+    ".gallery__container_btns-btn"
+  );
+
+  if (galleryTabsBtn) {
+    function showImage(imageSlug) {
+      galleryNameImg.forEach((image) => {
+        let imageDataSlug = image.dataset.slug;
+        if (imageDataSlug === imageSlug) {
+          image.style.display = "block";
+        } else {
+          image.style.display = "none";
+        }
+      });
+    }
+
+    function activeTabs() {
+      galleryTabsBtn.forEach((tab) => {
+        let tabsSlug = tab.dataset.slug;
+        let hasImage = false;
+
+        galleryNameImg.forEach((image) => {
+          let imageDataSlug = image.dataset.slug;
+          if (imageDataSlug === tabsSlug) {
+            hasImage = true;
+            return;
+          }
+        });
+
+        if (hasImage || tabsSlug === "all") {
+          tab.style.display = "flex";
+        } else {
+          tab.style.display = "none";
+        }
+        if (tab.length < 2) {
+          galleryTabsBtn.classList.add("active-tab");
+        } else {
+          tab.addEventListener("click", () => {
+            galleryTabsBtn.forEach((tabsBtn) =>
+              tabsBtn.classList.remove("active-tab")
+            );
+            tab.classList.add("active-tab");
+            if (tabsSlug === "all" || !tabsSlug) {
+              galleryNameImg.forEach((image) => {
+                image.style.display = "block";
+              });
+            } else {
+              showImage(tab.dataset.slug);
+            }
+          });
+        }
+      });
+    }
+
+    activeTabs();
+  }
 });

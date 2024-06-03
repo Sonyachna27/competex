@@ -8,6 +8,34 @@
   align-items: center;
   margin-bottom: 40px;
 }
+.gallery__container_btns {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    overflow-x: auto;
+  }
+}
+.gallery__container_btns-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 40px;
+  border: $--border;
+  color: $--green;
+  background-color: $--white;
+  @include text-semi-medium;
+  border-radius: 500px;
+  margin-bottom: 40px;
+  &.active-tab {
+    background-color: $--green;
+    color: $--white;
+  }
+  @media screen and (max-width: 767px) {
+    white-space: nowrap;
+  }
+}
 .gallery__images {
   display: flex;
   gap: 10px;
