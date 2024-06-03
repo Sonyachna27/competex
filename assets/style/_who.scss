@@ -1,6 +1,5 @@
-.advantages {
-  &__container {
-    display: flex;
+.who__container{
+	display: flex;
     flex-direction: row;
     gap: 20px;
     position: relative;
@@ -9,5 +8,3 @@
       flex-direction: column;
     }
   }
-}
-  

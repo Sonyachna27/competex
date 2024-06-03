@@ -1,7 +1,7 @@
 .hero {
   background: $--background;
   color: $--white;
-  & .hero__container{
+  &.hero_v2 .hero__container{
 	padding: 50px 0;
   }
 }
@@ -84,7 +84,8 @@
   }
 }
 .hero__bottom {
-  max-height: 400px;
+	.hero_v1 & {
+	max-height: 400px;
   height: 100%;
   @media screen and (max-width:1023px) {
 	min-height: 360px;
@@ -98,6 +99,8 @@
 		min-height: 360px;
 	  }
   }
+  }
+
 }
 
 @keyframes heroAnimation {

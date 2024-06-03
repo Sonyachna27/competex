@@ -28,6 +28,7 @@
   @include text-semi-medium;
   border-radius: 500px;
   margin-bottom: 40px;
+  cursor: pointer;
   &.active-tab {
     background-color: $--green;
     color: $--white;

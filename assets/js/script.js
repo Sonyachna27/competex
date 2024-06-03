@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const stikyElement = document.querySelectorAll(".advantages__scrolling_item");
+  const stikyElement = document.querySelectorAll(".scrolling_item");
   const resizeStikyElement = () => {
     windowInnerWidth = window.innerWidth; // Оновлення глобальної константи
 
@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1,
       spaceBetween: 10,
       watchOverflow: true,
-      loop: true,
-      //   autoplay: {
-      //     delay: 0,
-      //     disableOnInteraction: false,
-      //   },
-      //   speed: 3000,
+    //   loop: true,
+    //     autoplay: {
+    //       delay: 0,
+    //       disableOnInteraction: false,
+    //     },
+    //     speed: 3000,
       breakpoints: {
         550: {
           slidesPerView: 2,
@@ -141,4 +141,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     activeTabs();
   }
+
+
+  //анімація при скролі для картинок
+  const imgAnimated = document.querySelectorAll(".double__img-item:nth-of-type(odd) .double__img-item-images img:nth-child(1)");
+  const reversImgAnimated = document.querySelectorAll(".double__img-item:nth-of-type(even) .double__img-item-images img:nth-child(1)");
+  
+  const options = {
+	root: document,
+	rootMargin: "0px",
+	threshold: 0.8,
+  };
+  
+  const callback = function (entries, observer) {
+	entries.forEach((entry) => {
+	  if (entry.isIntersecting) {
+		if (Array.from(imgAnimated).includes(entry.target) && !entry.target.classList.contains("animated")) {
+		  entry.target.classList.add("animated");
+		} else if (Array.from(reversImgAnimated).includes(entry.target) && !entry.target.classList.contains("reverse-animated")) {
+		  entry.target.classList.add("reverse-animated");
+		}
+	  }
+	});
+  };
+  
+  const observer = new IntersectionObserver(callback, options);
+  
+  
+  if (imgAnimated.length > 0) {
+	imgAnimated.forEach((item) => observer.observe(item));
+  }
+  
+  if (reversImgAnimated.length > 0) {
+	reversImgAnimated.forEach((item) => observer.observe(item));
+  }
+  
+  
 });
