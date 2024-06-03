@@ -42,5 +42,71 @@
   }
 }
 
-.about_v2 {
+.about_v2__container {
+  display: flex;
+  align-content: stretch;
+  gap: 40px;
+  @media screen and (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
+}
+.about_v2_img {
+  width: 40%;
+  height: auto;
+  border-radius: 30px;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+	max-height: 100%;
+  }
+  & img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+}
+.about_v2_content {
+  width: 59%;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+  }
+}
+.about_v2__title {
+  margin-bottom: 30px;
+  text-wrap: balance;
+}
+.about_v2_text {
+  padding: 40px 70px;
+  border: 1px solid $--gray-text;
+  border-radius: 20px;
+  @media screen and (max-width:550px) {
+	padding: 20px 41px;
+  }
+  & p {
+    margin-bottom: 20px;
+    position: relative;
+    @include text-regular-m;
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+    &:nth-of-type(1) {
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: url("../image/quotation.svg") center center / cover
+          no-repeat;
+      }
+      &:before {
+        left: -30px;
+      }
+      &::after {
+        right: -30px;
+        transform: scale(-1, 1);
+      }
+    }
+  }
 }

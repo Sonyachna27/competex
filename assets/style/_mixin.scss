@@ -15,8 +15,8 @@
     text-transform: none;
     font: inherit;
   }
-  @media screen and (max-width:375px) {
-	font-size: 28px;
+  @media screen and (max-width: 375px) {
+    font-size: 28px;
   }
 }
 @mixin titleH2 {
@@ -32,8 +32,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  @media screen and (max-width:375px) {
-	font-size: 24px;
+  @media screen and (max-width: 375px) {
+    font-size: 24px;
   }
 }
 
@@ -91,4 +91,11 @@
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+}
+/* p (#6) */
+@mixin text-regular-m {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
 }

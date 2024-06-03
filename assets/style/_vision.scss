@@ -1,0 +1,96 @@
+.vision__title{
+	margin-bottom: 40px;
+	align-items: center;
+}
+.vision__row{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	align-content: stretch;
+	margin-bottom: 40px;
+	&:nth-of-type(even){
+		flex-direction: row-reverse;
+		.vision__arrow{
+			& img{
+				transform: scale(-1, 1);
+			}
+		}
+	}
+}
+.vision__item{
+	display: flex;
+flex-direction: column;
+padding: 40px;
+background-color: $--white;
+border-radius: 30px;
+border: 1px solid $--gray-text;
+width: calc((100% / 2) - 20px);
+height: auto;
+gap: 30px;
+@media screen and (max-width:1023px) {
+	width: calc((100% / 3) * 2 - 20px);;
+}
+@media screen and (max-width:767px) {
+	padding: 20px;
+}
+& img{
+	max-height: 240px;
+	border-radius: 120px;
+	object-fit: cover;
+	height: 100%;
+	aspect-ratio: 1 / .5;
+}
+.vision__item_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	& .green{
+@include titleH4;
+text-transform:capitalize;
+	}
+	& p{
+		width: 80%;
+		position: relative;
+		@include text-regular-m;
+		&:nth-of-type(1) {
+			&:before,
+			&:after {
+			  content: "";
+			  position: absolute;
+			  top: 0;
+			  width: 20px;
+			  height: 20px;
+			  background: url("../image/quotation.svg") center center / cover
+				no-repeat;
+			}
+			&:before {
+			  left: -30px;
+			}
+			&::after {
+			  right: -30px;
+			  transform: scale(-1, 1);
+			}
+		  }
+	}
+}
+}
+.vision__arrow{
+	width: 	calc((100% / 2) - 20px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@media screen and (max-width:1023px) {
+		width: 	calc((100% / 4) - 20px);
+	}
+	& img{
+		max-width: 300px;
+		max-height: 300px;
+		width: 100%;
+		height: 100%;
+		// @media screen and (max-width:1023px) {
+		// 	max-width: 80%;
+		// max-height: 80%;
+		// }
+	}
+}
