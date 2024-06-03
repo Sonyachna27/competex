@@ -48,6 +48,10 @@
       padding: 30px 20px;
       gap: 54px;
     }
+    @media screen and (max-width: 550px) {
+     
+      gap: 34px;
+    }
   }
 }
 .advantages__scrolling {
@@ -96,6 +100,10 @@
   }
   @media screen and (max-width: 767px) {
     max-width: 85px;
+  }
+  @media screen and (max-width: 550px) {
+    max-width: 65px;
+	font-size: 26px;
   }
 }
 .scrolling_item-content {

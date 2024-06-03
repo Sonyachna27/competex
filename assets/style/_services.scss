@@ -77,6 +77,7 @@
   flex-grow: 1;
   @media screen and (max-width: 1023px) {
     width: 100%;
+	aspect-ratio: 640 / 400;
   }
   & img {
     border-radius: inherit;

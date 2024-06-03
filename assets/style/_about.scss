@@ -20,7 +20,7 @@
 .about__slider {
   overflow: hidden;
 }
-.gallerySlider {
+.aboutSlider {
   @media screen and (min-width: 1024px) {
     margin-left: -19%;
     margin-right: -19%;
@@ -40,4 +40,7 @@
   &.even img {
     transform: rotate(2deg);
   }
+}
+
+.about_v2 {
 }
