@@ -71,6 +71,12 @@
   font-weight: 600;
   line-height: normal;
 }
+@mixin text-semi-l {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 // #p3
 @mixin text-semi {
   font-size: 18px;
@@ -107,4 +113,12 @@ line-height: normal;
 @media screen and (max-width:550px) {
 	font-size: 18px;
 }
+}
+/* p (#5) */
+@mixin text-bold-xs{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
 }

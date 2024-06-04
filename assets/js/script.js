@@ -177,4 +177,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   
+
+
+  const inputFields = document.querySelectorAll('.inputField');
+  inputFields.forEach((inputField)=>{
+	  const parentElement = inputField.parentNode;
+	  const label = parentElement ? parentElement.querySelector('label') : null;
+	  if (label) {
+		  inputField.addEventListener('input', function() {
+			  if (inputField.value.trim() !== '') {
+				  label.classList.add('up');
+			  } else {
+				  label.classList.remove('up');
+			  }
+		  });
+	  }
+  }
+  );
+
+  const inputs = document.querySelectorAll('.inputField');
+inputs.forEach((item=>{
+    item.addEventListener('focus', ()=>item.parentNode.classList.add('focused'));
+}
+));
 });

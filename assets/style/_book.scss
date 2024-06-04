@@ -1,0 +1,237 @@
+.book__container{
+	display: flex;
+	gap: 40px;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
+	& form{
+		display: flex;
+		
+		flex-wrap: wrap;
+		gap: 20px 25px;
+		padding: 60px;
+		background-color: $--white;
+		border: .5px solid $--gray-text;
+		border-radius: 20px;
+		@media screen and (max-width:767px) {
+			width: 100%;
+			padding: 40px;
+		}
+		@media screen and (max-width:550px) {
+			padding: 30px;
+		}
+		.input-wrap {
+			position: relative;
+			width: calc((100% /2) - 15px);
+			
+			&:has(textarea) {
+				width: 100%;
+			}
+			@media screen and (max-width:1023px) {    
+				width: 100%;
+				}
+		   & input, 
+		   & select,
+		   & textarea {
+			display: flex;
+			width: 100%;
+			padding: 18px;
+			align-items: flex-start;
+			gap: 10px;
+			flex-shrink: 0;
+			border-radius: 500px;
+			border: 1px solid $--gray-text;
+			background: #F3F7F9;;
+			color: $--black;
+			cursor: pointer;
+			outline: none;
+			&::placeholder{
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				color: $--black;
+			}
+			&:focus-within {
+				border-color: $--green;
+				&::placeholder {
+					color: $--green; 
+					transform: translateY(-15px);
+				}
+			}
+			}
+			& textarea{
+				border-radius: 20px;
+				min-height: 180px;
+				resize: none;
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		
+		   & label {
+				position: absolute;
+				top: 0;
+				transform: translate(0px, 80%);
+				left: 18px;
+				padding: 0 5px;
+				color: $--black;
+				font-size: 16px;
+				transition: top 0.3s, color 0.3s, font-size 0.3s;
+			}
+			.up {
+				top: -5px;
+				left: 18px;
+				font-size: 10px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: normal;
+				color: $--green;
+				& input{
+					border: 1px solid $--green;
+				}
+		   } 
+		   & input:focus ~ label,
+		   & select:focus ~ label,
+		  & textarea:focus ~ label {
+		   top: -5px;
+		   left: 18px;
+		   font-size: 10px;
+		   font-style: normal;
+		   font-weight: 500;
+		   line-height: normal;
+		   color: $--green;
+		   }
+
+		   & .focused~label,
+			& .focused~label,
+		   & .focused~label {
+			top: -5px;
+			left: 18px;
+			font-size: 10px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+			color: $--green;
+			}
+		
+			
+		}
+		
+		.select-wrap{
+			position: relative;
+			width: 100%;
+			display: flex;
+			width: 100%;
+		  & span{
+			width: 100%;
+		  }
+			&:before {
+				content: '';
+				width: 11px;
+				height: 11px;
+				position: absolute;
+				right: 21px;
+				top: 45%;
+				z-index: 15;
+				background: url(../image/vector.svg) no-repeat; 
+				transform: translateY(0) rotate(0); 
+				transition: transform 0.3s ease; 
+			}
+			& select{
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				appearance: none;
+				position: relative;
+				display: flex;
+				width: 100%;
+				color: inherit;
+				display: flex;
+				padding: 18px;
+				align-items: flex-start;
+				gap: 10px;
+				flex-shrink: 0;
+				border-radius: 500px;
+				border: 1px solid $--gray-text;
+				background: #F3F7F9;
+				color: $--black;
+				outline: none;
+				cursor: pointer;
+				option {
+					font: inherit;
+						display: block;
+						white-space: nowrap;
+					color: inherit;
+					option:hover {
+						background-color: $--green;
+					}
+			}
+		}
+		&:focus-within:before {
+			transform: translateY(-50%) rotate(180deg);
+		}
+		}
+		& .submit-wrap{
+			width: 100%;
+			position: relative;
+		
+			& input{
+				display: flex;
+				width: 100%;
+				padding: 18px;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid transparent;
+				gap: 10px;
+				flex-shrink: 0;
+				border-radius: 500px;
+				color: $--white;
+				cursor: pointer;
+				background: $--green;
+				outline: none;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
+				transition: .3s ease;
+				// @media screen and (max-width:367px) {
+				// 	justify-content: flex-start;
+				// }
+				&:hover{
+					background-color: $--white;
+					color: $--green;
+					border-color: $--green;
+					
+				}
+			}
+			&::after{
+				content: '';
+					position: absolute;
+					left: calc(50% + 35px);
+					top: 50%;
+					transform: translate(0%, -46%);
+					width: 14px;
+					height: 14px;
+					transition: all .3s ease;
+					background: url('../image/arrow-white-submit.svg') center center / cover no-repeat;
+			}
+			&:hover {
+				&:after{
+					background: url('../image/arrow-white-submit-green.svg') center center / cover no-repeat;
+				}
+
+			}
+		}
+	}
+}
+.book__title{
+	max-width: 420px;
+	width: 100%;
+	@media screen and (max-width:767px) {
+		align-items: center;
+		text-align: center;
+		max-width: 100%;
+	}
+}
+.wpcf7-form-control-wrap {
+    position: relative;
+}
