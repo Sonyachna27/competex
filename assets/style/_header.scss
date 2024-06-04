@@ -1,6 +1,14 @@
 .header {
   background-color: $--black;
   padding: 13px 0 14px 0;
+ @media screen and (max-width:1023px) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: auto;
+	width: 100%;
+	z-index: 20;
+ }
 }
 .header__container {
   display: flex;

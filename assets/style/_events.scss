@@ -2,12 +2,16 @@
 	padding: 120px 0;
 	background-color: $--white;
 	border-bottom: 1px solid $--gray-text;
+	@media screen and (max-width:767px) {
+		padding: 60px 0;
+	}
 }
 .events__container{
 	display: flex;
 	gap: 60px;
-	width: 100%;
-	margin: 0 auto;
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
 }
 .events__images{
 	display: flex;
@@ -15,22 +19,25 @@
 	justify-content: start;
 	width: calc((100% / 2) - 30px);
 	position: relative;
+	@media screen and (max-width:1023px) {
+		width: 100%;		
+	}
 	& img{
 		border-radius: 50%;
-		max-width: 385px;
+		max-width: 62%;
 		aspect-ratio:  1 / 1;
-		&:nth-child(2){
-			position:absolute;
-			top: 0;
-			right:0%;
-			
+		@media screen and (max-width:1023px) {
+			max-width: 50%;		
+		}
+		&:nth-child(2){			
 			border: 10px solid $--white;
 			z-index: 1;
+			margin-left: -30%;		
+			@media screen and (max-width:550px) {
+				border-width: 5px;
+			}
 		}
 		&:nth-child(1){
-			position:absolute;
-			top: 0;
-			left:0%;
 			z-index: 0;
 			filter: grayscale(100%);
 		}
@@ -41,6 +48,11 @@
     display: flex;
     width: calc(50% - 30px);
     flex-direction: column;
+	height: auto;
+	
+	@media screen and (max-width:1023px) {
+		width: 100%;
+	}
 	& h2{
 		text-wrap: balance;
 		margin-bottom: 10px;
@@ -48,6 +60,12 @@
 	& p{
 		margin-bottom: 10px;
 		@include text-regular;
+		&:nth-last-of-type(1){
+			@media screen and (max-width:1023px) {
+				margin-bottom: 40px;
+			}
+			margin-bottom: auto;
+		}
 	}
 	& .btn{
 		margin-top: auto;

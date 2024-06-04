@@ -39,6 +39,7 @@ gap: 30px;
 	object-fit: cover;
 	height: 100%;
 	aspect-ratio: 1 / .5;
+	filter: grayscale(100%);
 }
 .vision__item_content{
 	display: flex;
