@@ -44,9 +44,7 @@ main {
     margin-top: 77px;
   }
 }
-// * {
-//   border: 1px solid red;
-// }
+
 .container {
   max-width: 1340px;
   width: 100%;
@@ -98,8 +96,8 @@ h3 {
   position: relative;
   &:after {
     content: "";
-    width: 15px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: url("../image/Arrow.svg") center center / cover no-repeat;
   }
   &:hover {
@@ -476,10 +474,10 @@ h3 {
 
 
 .animated{
-	animation: img-animate 2s linear forwards;
+	animation: img-animate .7s linear forwards;
 }
 .reverse-animated{
-	animation: reverse-img-animate 2s linear forwards;
+	animation: reverse-img-animate .7s linear forwards;
 }
 @keyframes img-animate {
 	0%{
