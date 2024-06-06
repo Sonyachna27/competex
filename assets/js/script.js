@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // для блоків що складаються гармошкою
+
   const stikyElement = document.querySelectorAll(".scrolling_item");
   const resizeStikyElement = () => {
-    windowInnerWidth = window.innerWidth; // Оновлення глобальної константи
+    windowInnerWidth = window.innerWidth; 
 
     if (windowInnerWidth >= 1024 && stikyElement) {
       stikyElement.forEach((stiky, index) => {
@@ -34,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //функція для слайдеру з фото на весь екран
 
-  const actionSliderInit = document.querySelector(".aboutSlider");
-  var slides = document.querySelectorAll(".about-slide");
+  const actionSliderInit = document.querySelector(".moveSlider");
+  var slides = document.querySelectorAll(".move-slide");
   slides.forEach((slide, index) => {
     if (index % 2 === 0) {
       slide.classList.add("even");
@@ -45,16 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (actionSliderInit) {
-    const sliderAction = new Swiper(".aboutSlider", {
+    const sliderAction = new Swiper(".moveSlider", {
       slidesPerView: 1,
       spaceBetween: 10,
       watchOverflow: true,
-    //   loop: true,
-    //     autoplay: {
-    //       delay: 0,
-    //       disableOnInteraction: false,
-    //     },
-    //     speed: 3000,
+      loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        speed: 3000,
       breakpoints: {
         550: {
           slidesPerView: 2,
@@ -177,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   
+// функція для форми, аби підіймався текст при введенні тексту
 
 
   const inputFields = document.querySelectorAll('.inputField');

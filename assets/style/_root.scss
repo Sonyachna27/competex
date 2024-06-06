@@ -38,6 +38,9 @@ body {
   font-weight: 400;
   color: $--black;
   background: #f3f7f9;
+  &:has(.error){
+	background-color: $--black;
+  }
 }
 main {
   @media screen and (max-width: 1023px) {

@@ -108,6 +108,9 @@ body {
   color: #0e0c15;
   background: #f3f7f9;
 }
+body:has(.error) {
+  background-color: #0e0c15;
+}
 
 @media screen and (max-width: 1023px) {
   main {
@@ -832,6 +835,51 @@ h3 {
   transform: rotate(45deg);
 }
 
+.move__top {
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.move__top h2, .move__top p {
+  max-width: 79%;
+}
+.move__top h2 {
+  margin-bottom: 10px;
+}
+.move__top p {
+  margin-bottom: 25px;
+}
+.move__top p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.move__slider {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .moveSlider {
+    margin-left: -19%;
+    margin-right: -19%;
+  }
+}
+
+.move-slide {
+  border-radius: 30px;
+  background-color: aliceblue;
+  aspect-ratio: 310/410;
+}
+.move-slide img {
+  border-radius: 30px;
+  aspect-ratio: 310/410;
+}
+.move-slide.odd img {
+  transform: rotate(-2deg);
+}
+.move-slide.even img {
+  transform: rotate(2deg);
+}
+
 .header {
   background-color: #0e0c15;
   padding: 13px 0 14px 0;
@@ -1190,7 +1238,7 @@ h3 {
   background: linear-gradient(94deg, #51bf26 0%, #e3ae0b 100%);
   color: #fff;
 }
-.hero.hero_v2 .hero__container {
+.hero .hero__container {
   padding: 50px 0;
 }
 
@@ -1207,10 +1255,10 @@ h3 {
   font-weight: 400;
   line-height: normal;
 }
-.hero_v1 .hero__top {
+.main .hero__top {
   padding: 66px 0 127px 0;
 }
-.hero_v1 .hero__top:after {
+.main .hero__top:after {
   position: absolute;
   content: "";
   width: 100%;
@@ -1281,16 +1329,16 @@ h3 {
   border: 1.5px solid #2ca656;
 }
 
-.hero_v1 .hero__bottom {
+.main .hero__bottom {
   max-height: 400px;
   height: 100%;
 }
 @media screen and (max-width: 1023px) {
-  .hero_v1 .hero__bottom {
+  .main .hero__bottom {
     min-height: 360px;
   }
 }
-.hero_v1 .hero__bottom img {
+.main .hero__bottom img {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 1440/400;
@@ -1298,7 +1346,7 @@ h3 {
   width: 100%;
 }
 @media screen and (max-width: 1023px) {
-  .hero_v1 .hero__bottom img {
+  .main .hero__bottom img {
     min-height: 360px;
   }
 }
@@ -1339,74 +1387,29 @@ h3 {
   }
 }
 
-.about__top {
-  text-align: center;
-  align-items: center;
-  margin-bottom: 40px;
-}
-.about__top h2, .about__top p {
-  max-width: 79%;
-}
-.about__top h2 {
-  margin-bottom: 10px;
-}
-.about__top p {
-  margin-bottom: 25px;
-}
-.about__top p:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.about__slider {
-  overflow: hidden;
-}
-
-@media screen and (min-width: 1024px) {
-  .aboutSlider {
-    margin-left: -19%;
-    margin-right: -19%;
-  }
-}
-
-.about-slide {
-  border-radius: 30px;
-  background-color: aliceblue;
-  aspect-ratio: 310/410;
-}
-.about-slide img {
-  border-radius: 30px;
-  aspect-ratio: 310/410;
-}
-.about-slide.odd img {
-  transform: rotate(-2deg);
-}
-.about-slide.even img {
-  transform: rotate(2deg);
-}
-
-.about_v2__container {
+.about__container {
   display: flex;
   align-content: stretch;
   gap: 40px;
 }
 @media screen and (max-width: 1023px) {
-  .about_v2__container {
+  .about__container {
     flex-direction: column-reverse;
   }
 }
 
-.about_v2_img {
+.about__img {
   width: 40%;
   height: auto;
   border-radius: 30px;
 }
 @media screen and (max-width: 1023px) {
-  .about_v2_img {
+  .about__img {
     width: 100%;
     max-height: 100%;
   }
 }
-.about_v2_img img {
+.about__img img {
   height: 100%;
   max-width: 100%;
   -o-object-fit: cover;
@@ -1414,31 +1417,31 @@ h3 {
   border-radius: inherit;
 }
 
-.about_v2_content {
+.about__content {
   width: 59%;
 }
 @media screen and (max-width: 1023px) {
-  .about_v2_content {
+  .about__content {
     width: 100%;
   }
 }
 
-.about_v2__title {
+.about__title {
   margin-bottom: 30px;
   text-wrap: balance;
 }
 
-.about_v2_text {
+.about__text {
   padding: 40px 70px;
   border: 1px solid #7f868a;
   border-radius: 20px;
 }
 @media screen and (max-width: 550px) {
-  .about_v2_text {
+  .about__text {
     padding: 20px 41px;
   }
 }
-.about_v2_text p {
+.about__text p {
   margin-bottom: 20px;
   position: relative;
   font-size: 16px;
@@ -1446,10 +1449,10 @@ h3 {
   font-weight: 400;
   line-height: 140%;
 }
-.about_v2_text p:nth-last-of-type(1) {
+.about__text p:nth-last-of-type(1) {
   margin-bottom: 0;
 }
-.about_v2_text p:nth-of-type(1):before, .about_v2_text p:nth-of-type(1):after {
+.about__text p:nth-of-type(1):before, .about__text p:nth-of-type(1):after {
   content: "";
   position: absolute;
   top: 0;
@@ -1457,10 +1460,10 @@ h3 {
   height: 20px;
   background: url("../image/quotation.svg") center center/cover no-repeat;
 }
-.about_v2_text p:nth-of-type(1):before {
+.about__text p:nth-of-type(1):before {
   left: -30px;
 }
-.about_v2_text p:nth-of-type(1)::after {
+.about__text p:nth-of-type(1)::after {
   right: -30px;
   transform: scale(-1, 1);
 }
@@ -2880,4 +2883,27 @@ h3 {
   .promo__info {
     border-radius: 0 0 30px 30px;
   }
+}
+
+.error__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+.error__container img {
+  max-width: 700px;
+  aspect-ratio: 1/0.8;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.error__container .green-btn {
+  max-width: 168px;
+}
+.error__container h2 {
+  margin-bottom: 10px;
+}
+.error__container p {
+  margin-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */

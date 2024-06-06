@@ -1,13 +1,12 @@
 .hero {
   background: $--background;
   color: $--white;
-  &.hero_v2 .hero__container{
+  & .hero__container{
 	padding: 50px 0;
   }
 }
 
 .hero__top {
- 
   text-align: center;
   position: relative;
   & h1 {
@@ -16,7 +15,7 @@
   & p {
     @include text-height-regular;
   }
-  .hero_v1 & {
+  .main & {
     padding: 66px 0 127px 0;
     &:after {
       position: absolute;
@@ -84,7 +83,7 @@
   }
 }
 .hero__bottom {
-	.hero_v1 & {
+	.main & {
 	max-height: 400px;
   height: 100%;
   @media screen and (max-width:1023px) {
