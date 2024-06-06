@@ -79,11 +79,11 @@ h3 {
   display: flex;
   gap: 10px;
   border: 1px solid $--green;
-  background-color: transparent;
+  background-color: $--white;
   padding: 11px 24px;
   padding: 11px 20px;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   color: $--green;
   max-width: fit-content;
   width: 100%;
@@ -94,29 +94,22 @@ h3 {
   font-weight: 700;
   line-height: normal;
   position: relative;
-  &:after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    background: url("../image/Arrow.svg") center center / cover no-repeat;
-  }
+
   &:hover {
     color: $--white;
     background-color: $--green;
-    &:after {
-      background-image: url("../image/arrow-white.svg");
-    }
+    & svg path{
+		fill:$--white;
+	}
   }
 }
 .green-btn {
   display: flex;
   gap: 10px;
   border: 1px solid $--green;
-  padding: 11px 24px;
   padding: 11px 20px;
   align-items: center;
   justify-content: center;
-  
   max-width: 100%;
   width: 100%;
   border-radius: 50px;
@@ -127,20 +120,15 @@ h3 {
   line-height: normal;
   position: relative;
   color: $--white;
-    background-color: $--green;
-  &:after {
-    content: "";
-    width: 12px;
-    height: 12px;
-	background-image: url("../image/arrow-white.svg");
-  }
+	background-color: $--green;
+  
   &:hover {
     color: $--green;
 	background-color: $--white;
-    &:after {
-		background: url("../image/Arrow.svg") center center / cover no-repeat;
-
-    }
+	background-color: red;
+   & svg{
+	fill: $--green;
+   }
   }
 }
 .mb-m {

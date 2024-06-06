@@ -100,9 +100,13 @@
     color: inherit;
     max-width: 163px;
     width: 100%;
-
+	background-color: transparent;
     &:hover {
       color: $--white;
+	  background-color: $--green;
+		& svg path{
+			fill:$--white;
+		}
     }
   }
 }
