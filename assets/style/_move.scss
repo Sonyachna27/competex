@@ -1,0 +1,44 @@
+.move__top {
+	text-align: center;
+	align-items: center;
+	margin-bottom: 40px;
+	& h2,
+	& p {
+	  max-width: 79%;
+	}
+	& h2 {
+	  margin-bottom: 10px;
+	}
+	& p {
+	  margin-bottom: 25px;
+	  &:not(:last-child) {
+		margin-bottom: 10px;
+	  }
+	}
+  }
+  //
+  .move__slider {
+	overflow: hidden;
+  }
+  .moveSlider {
+	@media screen and (min-width: 1024px) {
+	  margin-left: -19%;
+	  margin-right: -19%;
+	}
+  }
+  .move-slide {
+	border-radius: 30px;
+	background-color: aliceblue;
+	aspect-ratio: 310 / 410;
+	& img {
+	  border-radius: 30px;
+	  aspect-ratio: 310 / 410;
+	}
+	&.odd img {
+	  transform: rotate(-2deg);
+	}
+	&.even img {
+	  transform: rotate(2deg);
+	}
+  }
+  
