@@ -1,10 +1,13 @@
 .hero {
   background: $--background;
   color: $--white;
-  & .hero__container{
-	padding: 50px 0;
-  }
 }
+.hero__container{
+	padding: 50px 0;
+	.main &{
+		padding: 0;
+	 }
+  }
 
 .hero__top {
   text-align: center;
