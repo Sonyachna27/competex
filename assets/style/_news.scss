@@ -38,6 +38,9 @@
     max-height: 275px;
     object-fit: cover;
     object-position: 100% 20%;
+	@media screen and (max-width:550px) {
+		max-height: 180px;
+	}
   }
 }
 .news__item_bottom {

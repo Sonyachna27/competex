@@ -4,6 +4,9 @@
 	@media screen and (max-width:767px) {
 		flex-direction: column;
 	}
+	@media screen and (max-width:550px) {
+		gap: 20px;
+	}
 	& form{
 		display: flex;
 		
@@ -193,9 +196,6 @@
 				font-weight: 600;
 				line-height: normal;
 				transition: .3s ease;
-				// @media screen and (max-width:367px) {
-				// 	justify-content: flex-start;
-				// }
 				&:hover{
 					background-color: $--white;
 					color: $--green;

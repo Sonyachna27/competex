@@ -15,8 +15,8 @@
     text-transform: none;
     font: inherit;
   }
-  @media screen and (max-width: 375px) {
-    font-size: 28px;
+  @media screen and (max-width: 767px) {
+    font-size: 34px;
   }
 }
 @mixin titleH2 {
@@ -32,8 +32,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  @media screen and (max-width: 375px) {
-    font-size: 24px;
+  @media screen and (max-width: 767px) {
+    font-size: 28px;
   }
 }
 
@@ -43,6 +43,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media screen and (max-width:767px) {
+	font-size: 24px;
+  }
 }
 @mixin title-name {
   font-size: 12px;
