@@ -30,11 +30,19 @@
 	border-radius: 30px;
 	background-color: aliceblue;
 	aspect-ratio: 310 / 410;
+	@media screen and (max-width:767px) {
+		max-width: 160px;
+		max-height: 210px;
+		aspect-ratio: 160 / 210;
+	}
 	& img {
 	  border-radius: 30px;
 	  aspect-ratio: 310 / 410;
 	  object-fit: cover;
-	//   object-position: 100% 50%;
+		height: 100%;
+		@media screen and (max-width:767px) {
+			aspect-ratio: 160 / 210;
+		}
 	}
 	&.odd img {
 	  transform: rotate(-2deg);

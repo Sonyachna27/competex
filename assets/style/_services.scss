@@ -2,9 +2,11 @@
   margin-bottom: 40px;
   align-items: center;
   text-wrap: balance;
+  @media screen and (max-width:767px) {
+	align-items: flex-start;
+  }
 }
-.services__wrap {
-}
+
 .services__wrap {
   display: flex;
   flex-direction: column;
