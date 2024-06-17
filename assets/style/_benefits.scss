@@ -38,6 +38,9 @@
 		border-radius: 15px 15px 0 0;
 		
 	}
+	@media screen and (max-width:367px) {
+		padding: 30px;	
+	}
 	& span{
 		padding: 4px 20px;
 		color: $--green;
@@ -72,10 +75,10 @@ position: absolute;
 			right: -20px;
 			bottom: -30px;
 			transform: scale(-1);
-			background: url(../image/quotation.svg) center center / cover no-repeat;
+			background: url(../images/quotation.svg) center center / cover no-repeat;
 		}
 		&::before{
-			background: url(../image/quotation.svg) center center / cover no-repeat;
+			background: url(../images/quotation.svg) center center / cover no-repeat;
 		
 		top: -30px;
     left: -20px;

@@ -133,7 +133,7 @@
 				right: 21px;
 				top: 45%;
 				z-index: 15;
-				background: url(../image/vector.svg) no-repeat; 
+				background: url(../images/vector.svg) no-repeat; 
 				transform: translateY(0) rotate(0); 
 				transition: transform 0.3s ease; 
 			}
@@ -212,11 +212,11 @@
 					width: 14px;
 					height: 14px;
 					transition: all .3s ease;
-					background: url('../image/arrow-white-submit.svg') center center / cover no-repeat;
+					background: url('../images/arrow-white-submit.svg') center center / cover no-repeat;
 			}
 			&:hover {
 				&:after{
-					background: url('../image/arrow-white-submit-green.svg') center center / cover no-repeat;
+					background: url('../images/arrow-white-submit-green.svg') center center / cover no-repeat;
 				}
 
 			}

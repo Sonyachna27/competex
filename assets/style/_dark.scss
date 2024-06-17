@@ -1,0 +1,17 @@
+@media screen and (prefers-color-scheme:dark) { 
+	.accord-item-top .close {
+		background-color: #7c7c7c;
+	}
+	.footer__contact a svg rect {
+		fill: #939090;
+	}
+	.footer__social .socials a svg ellipse {
+		fill: #939090;
+	}
+	.contact__item_info > svg rect {
+		fill: #939090;
+	}
+	.contact__item_info a:not([class]) svg ellipse {
+		fill: #939090;
+	}
+}

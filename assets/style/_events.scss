@@ -25,6 +25,7 @@
 	& img{
 		border-radius: 50%;
 		max-width: 62%;
+		width: 100%;
 		aspect-ratio:  1 / 1;
 		@media screen and (max-width:1023px) {
 			max-width: 50%;		
@@ -32,7 +33,9 @@
 		&:nth-child(2){			
 			border: 10px solid $--white;
 			z-index: 1;
+			position: relative;
 			margin-left: -30%;		
+			box-sizing: content-box;
 			@media screen and (max-width:550px) {
 				border-width: 5px;
 			}
@@ -61,14 +64,10 @@
 		margin-bottom: 10px;
 		@include text-regular;
 		&:nth-last-of-type(1){
-			@media screen and (max-width:1023px) {
-				margin-bottom: 40px;
-			}
-			margin-bottom: auto;
+			margin-bottom: 30px;
 		}
 	}
 	& .btn{
-		margin-top: auto;
 		max-width: 220px;
 		align-items: center;
 	}

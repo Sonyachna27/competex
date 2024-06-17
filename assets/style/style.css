@@ -240,9 +240,8 @@ h3 {
 .green-btn:hover {
   color: #2ca656;
   background-color: #fff;
-  background-color: red;
 }
-.green-btn:hover svg {
+.green-btn:hover svg path {
   fill: #2ca656;
 }
 
@@ -252,15 +251,6 @@ h3 {
 @media screen and (max-width: 767px) {
   .mb-m {
     margin-bottom: 60px;
-  }
-}
-
-.mb-s {
-  margin-bottom: 60px;
-}
-@media screen and (max-width: 767px) {
-  .mb-s {
-    margin-bottom: 30px;
   }
 }
 
@@ -631,6 +621,7 @@ h3 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  transition: 0.3s ease;
 }
 .green:before {
   content: "";
@@ -699,18 +690,18 @@ h3 {
 
 @keyframes img-animate {
   0% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: -60%;
+    transform: translateX(-60%);
   }
 }
 @keyframes reverse-img-animate {
   0% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: 60%;
+    transform: translateX(60%);
   }
 }
 .accord {
@@ -872,6 +863,8 @@ h3 {
 .move-slide img {
   border-radius: 30px;
   aspect-ratio: 310/410;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .move-slide.odd img {
   transform: rotate(-2deg);
@@ -1269,7 +1262,7 @@ h3 {
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../image/circle.svg) center center/contain no-repeat;
+  background: url(../images/circle.svg) center center/contain no-repeat;
 }
 
 .hero-link {
@@ -1293,7 +1286,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in;
   z-index: 1;
 }
 @media screen and (max-width: 767px) {
@@ -1325,6 +1318,9 @@ h3 {
     padding: 30px;
   }
 }
+.hero-link:hover {
+  background-color: #2ca656;
+}
 .hero-link:hover::after {
   top: 10px;
   left: 10px;
@@ -1348,6 +1344,8 @@ h3 {
   aspect-ratio: 1440/400;
   max-height: 400px;
   width: 100%;
+  -o-object-position: 100% 35%;
+     object-position: 100% 35%;
 }
 @media screen and (max-width: 1023px) {
   .main .hero__bottom img {
@@ -1462,7 +1460,7 @@ h3 {
   top: 0;
   width: 20px;
   height: 20px;
-  background: url("../image/quotation.svg") center center/cover no-repeat;
+  background: url("../images/quotation.svg") center center/cover no-repeat;
 }
 .about__text p:nth-of-type(1):before {
   left: -30px;
@@ -1847,10 +1845,10 @@ h3 {
   border-radius: inherit;
 }
 .achievements__item:nth-of-type(4n+1) {
-  background: url(../image/services-img1.jpg) center center/cover no-repeat;
+  background: url(../images/services-img1.jpg) center center/cover no-repeat;
 }
 .achievements__item:nth-of-type(4n+3) {
-  background: url(../image/services-img2.jpg) center center/cover no-repeat;
+  background: url(../images/services-img2.jpg) center center/cover no-repeat;
 }
 
 .achievements__count {
@@ -1895,11 +1893,19 @@ h3 {
   align-content: stretch;
   margin-bottom: 40px;
 }
-.vision__row:nth-of-type(even) {
-  flex-direction: row-reverse;
+@media screen and (min-width: 768px) {
+  .vision__row:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  .vision__row:nth-of-type(even) .vision__arrow img {
+    transform: scale(-1, 1);
+  }
 }
-.vision__row:nth-of-type(even) .vision__arrow img {
-  transform: scale(-1, 1);
+@media screen and (max-width: 767px) {
+  .vision__row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .vision__item {
@@ -1921,6 +1927,7 @@ h3 {
 @media screen and (max-width: 767px) {
   .vision__item {
     padding: 20px;
+    width: 100%;
   }
 }
 .vision__item img {
@@ -1959,7 +1966,7 @@ h3 {
   top: 0;
   width: 20px;
   height: 20px;
-  background: url("../image/quotation.svg") center center/cover no-repeat;
+  background: url("../images/quotation.svg") center center/cover no-repeat;
 }
 .vision__item .vision__item_content p:nth-of-type(1):before {
   left: -30px;
@@ -1977,7 +1984,14 @@ h3 {
 }
 @media screen and (max-width: 1023px) {
   .vision__arrow {
-    width: calc(25% - 20px);
+    width: calc(33.3333333333% - 20px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .vision__arrow {
+    width: 100%;
+    max-width: 280px;
+    max-height: 280px;
   }
 }
 .vision__arrow img {
@@ -2036,6 +2050,7 @@ h3 {
 .events__images img {
   border-radius: 50%;
   max-width: 62%;
+  width: 100%;
   aspect-ratio: 1/1;
 }
 @media screen and (max-width: 1023px) {
@@ -2046,7 +2061,9 @@ h3 {
 .events__images img:nth-child(2) {
   border: 10px solid #fff;
   z-index: 1;
+  position: relative;
   margin-left: -30%;
+  box-sizing: content-box;
 }
 @media screen and (max-width: 550px) {
   .events__images img:nth-child(2) {
@@ -2082,15 +2099,9 @@ h3 {
   line-height: 140%;
 }
 .events__content p:nth-last-of-type(1) {
-  margin-bottom: auto;
-}
-@media screen and (max-width: 1023px) {
-  .events__content p:nth-last-of-type(1) {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 30px;
 }
 .events__content .btn {
-  margin-top: auto;
   max-width: 220px;
   align-items: center;
 }
@@ -2141,6 +2152,11 @@ h3 {
     border-radius: 15px 15px 0 0;
   }
 }
+@media screen and (max-width: 367px) {
+  .benefits__item_title {
+    padding: 30px;
+  }
+}
 .benefits__item_title span {
   padding: 4px 20px;
   color: #2ca656;
@@ -2185,10 +2201,10 @@ h3 {
   right: -20px;
   bottom: -30px;
   transform: scale(-1);
-  background: url(../image/quotation.svg) center center/cover no-repeat;
+  background: url(../images/quotation.svg) center center/cover no-repeat;
 }
 .benefits__item-content p::before {
-  background: url(../image/quotation.svg) center center/cover no-repeat;
+  background: url(../images/quotation.svg) center center/cover no-repeat;
   top: -30px;
   left: -20px;
 }
@@ -2221,6 +2237,7 @@ h3 {
   position: absolute;
   top: -17px;
   left: calc(50% - 52px);
+  font-size: 20px;
 }
 .feature__item .green:before {
   display: none;
@@ -2249,6 +2266,7 @@ h3 {
   display: flex;
   width: 25%;
   position: relative;
+  align-items: center;
 }
 @media screen and (max-width: 550px) {
   .feature__item_images {
@@ -2259,11 +2277,12 @@ h3 {
   border-radius: 50%;
   max-width: 100px;
   aspect-ratio: 1/1;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 50% 100%;
      object-position: 50% 100%;
+  width: 100%;
 }
 @media screen and (max-width: 550px) {
   .feature__item_images img {
@@ -2278,6 +2297,8 @@ h3 {
   margin-left: -10%;
   z-index: 1;
   border: 5px solid #fff;
+  border-right: none;
+  box-sizing: content-box;
 }
 @media screen and (max-width: 767px) {
   .feature__item_images img:nth-of-type(2) {
@@ -2640,7 +2661,7 @@ h3 {
   right: 21px;
   top: 45%;
   z-index: 15;
-  background: url(../image/vector.svg) no-repeat;
+  background: url(../images/vector.svg) no-repeat;
   transform: translateY(0) rotate(0);
   transition: transform 0.3s ease;
 }
@@ -2714,10 +2735,10 @@ h3 {
   width: 14px;
   height: 14px;
   transition: all 0.3s ease;
-  background: url("../image/arrow-white-submit.svg") center center/cover no-repeat;
+  background: url("../images/arrow-white-submit.svg") center center/cover no-repeat;
 }
 .book__container form .submit-wrap:hover:after {
-  background: url("../image/arrow-white-submit-green.svg") center center/cover no-repeat;
+  background: url("../images/arrow-white-submit-green.svg") center center/cover no-repeat;
 }
 
 .book__title {
@@ -2800,7 +2821,7 @@ h3 {
   display: block;
   width: 12px;
   height: 12px;
-  background: url(../image/list-circle.svg) center center/cover no-repeat;
+  background: url(../images/list-circle.svg) center center/cover no-repeat;
 }
 
 .promo__container {
@@ -2849,7 +2870,6 @@ h3 {
 
 .promo__title {
   border-radius: 30px 30px 0 0;
-  border: 1px solid #fff;
 }
 
 .promo__images {
@@ -2857,16 +2877,16 @@ h3 {
   align-items: center;
 }
 .promo__images img {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 64px;
+  max-height: 64px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
 }
 .promo__images img:not(:first-child) {
-  margin-left: -6%;
+  margin-left: -5%;
 }
 
 .promo__info p {
@@ -2910,4 +2930,22 @@ h3 {
 }
 .error__container p {
   margin-bottom: 20px;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .accord-item-top .close {
+    background-color: #7c7c7c;
+  }
+  .footer__contact a svg rect {
+    fill: #939090;
+  }
+  .footer__social .socials a svg ellipse {
+    fill: #939090;
+  }
+  .contact__item_info > svg rect {
+    fill: #939090;
+  }
+  .contact__item_info a:not([class]) svg ellipse {
+    fill: #939090;
+  }
 }/*# sourceMappingURL=style.css.map */
