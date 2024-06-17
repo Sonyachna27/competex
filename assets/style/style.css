@@ -1317,6 +1317,11 @@ h3 {
     top: 55%;
   }
 }
+@media screen and (max-width: 480px) {
+  .hero-link .hero-link {
+    top: 62%;
+  }
+}
 @media screen and (max-width: 367px) {
   .hero-link {
     top: 70%;

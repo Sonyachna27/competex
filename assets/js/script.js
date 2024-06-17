@@ -91,56 +91,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (galleryTabsBtn) {
     function showImage(imageSlug) {
-      galleryNameImg.forEach((image) => {
-        let imageDataSlug = image.dataset.slug;
-        if (imageDataSlug === imageSlug) {
-          image.style.display = "block";
-        } else {
-          image.style.display = "none";
-        }
-      });
+        galleryNameImg.forEach((image) => {
+            let imageDataSlug = image.dataset.slug;
+            if (imageDataSlug === imageSlug) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
     }
 
     function activeTabs() {
-      galleryTabsBtn.forEach((tab) => {
-        let tabsSlug = tab.dataset.slug;
-        let hasImage = false;
+        galleryTabsBtn.forEach((tab, index) => {
+            let tabsSlug = tab.dataset.slug;
+            let hasImage = false;
 
-        galleryNameImg.forEach((image) => {
-          let imageDataSlug = image.dataset.slug;
-          if (imageDataSlug === tabsSlug) {
-            hasImage = true;
-            return;
-          }
-        });
+            galleryNameImg.forEach((image) => {
+                let imageDataSlug = image.dataset.slug;
+                if (imageDataSlug === tabsSlug) {
+                    hasImage = true;
+                    return;
+                }
+            });
 
-        if (hasImage || tabsSlug === "all") {
-          tab.style.display = "flex";
-        } else {
-          tab.style.display = "none";
-        }
-        if (tab.length < 2) {
-          galleryTabsBtn.classList.add("active-tab");
-        } else {
-          tab.addEventListener("click", () => {
-            galleryTabsBtn.forEach((tabsBtn) =>
-              tabsBtn.classList.remove("active-tab")
-            );
-            tab.classList.add("active-tab");
-            if (tabsSlug === "all" || !tabsSlug) {
-              galleryNameImg.forEach((image) => {
-                image.style.display = "block";
-              });
+            if (hasImage || tabsSlug === "all") {
+                tab.style.display = "flex";
             } else {
-              showImage(tab.dataset.slug);
+                tab.style.display = "none";
             }
-          });
-        }
-      });
+
+            if (index === 0) {
+                tab.classList.add("active-tab");
+                if (tabsSlug === "all" || !tabsSlug) {
+                    galleryNameImg.forEach((image) => {
+                        image.style.display = "block";
+                    });
+                } else {
+                    showImage(tabsSlug);
+                }
+            }
+
+            tab.addEventListener("click", () => {
+                galleryTabsBtn.forEach((tabsBtn) =>
+                    tabsBtn.classList.remove("active-tab")
+                );
+                tab.classList.add("active-tab");
+                if (tabsSlug === "all" || !tabsSlug) {
+                    galleryNameImg.forEach((image) => {
+                        image.style.display = "block";
+                    });
+                } else {
+                    showImage(tab.dataset.slug);
+                }
+            });
+        });
     }
 
     activeTabs();
-  }
+}
+
 
 
   //анімація при скролі для картинок
