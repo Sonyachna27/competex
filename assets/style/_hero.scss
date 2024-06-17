@@ -7,7 +7,7 @@
 	.main &{
 		padding: 0;
 	 }
-  }
+}
 
 .hero__top {
   text-align: center;
@@ -27,7 +27,7 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: url(../image/circle.svg) center center / contain no-repeat;
+      background: url(../images/circle.svg) center center / contain no-repeat;
     }
   }
 }
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in;
   z-index: 1;
   @media screen and (max-width:767px) {
 	top: 68%;
@@ -76,6 +76,7 @@
     padding: 30px;
   }
   &:hover {
+	background-color: $--green;
     &::after {
       top: 10px;
       left: 10px;
@@ -97,6 +98,7 @@
     aspect-ratio: 1440 / 400;
     max-height: 400px;
     width: 100%;
+	object-position: 100% 35%;
 	@media screen and (max-width:1023px) {
 		min-height: 360px;
 	  }
@@ -108,7 +110,7 @@
 @keyframes heroAnimation {
 	0%{
 		top: 0;
-    left: 0px;
+    	left: 0px;
 		width: 100%;
 		height: 100%;
 		border: 0px solid $--green;
@@ -122,7 +124,7 @@
 	}
 	100%{
 		top: 0;
-    left: 0px;
+    	left: 0px;
 		width: 100%;
 		height: 100%;
 		border: 0px solid $--green;

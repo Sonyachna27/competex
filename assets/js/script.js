@@ -87,9 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // функція для табів на сторінці галерея
 
   const galleryNameImg = document.querySelectorAll(".gallery-image");
-  const galleryTabsBtn = document.querySelectorAll(
-    ".gallery__container_btns-btn"
-  );
+  const galleryTabsBtn = document.querySelectorAll( ".gallery__container_btns-btn");
 
   if (galleryTabsBtn) {
     function showImage(imageSlug) {
