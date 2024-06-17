@@ -53,10 +53,13 @@
   transition: 0.3s ease-in;
   z-index: 1;
   @media screen and (max-width:767px) {
-	top: 68%;
+	top: 50%;
   }
   @media screen and (max-width:550px) {
-	top: 77%;
+	top: 55%;
+  }
+  @media screen and (max-width:367px) {
+	top: 70%;
   }
   &:after {
     content: "";
@@ -98,7 +101,7 @@
     aspect-ratio: 1440 / 400;
     max-height: 400px;
     width: 100%;
-	object-position: 100% 35%;
+	object-position: 100% 0%;
 	@media screen and (max-width:1023px) {
 		min-height: 360px;
 	  }

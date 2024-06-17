@@ -1309,12 +1309,17 @@ h3 {
 }
 @media screen and (max-width: 767px) {
   .hero-link {
-    top: 68%;
+    top: 50%;
   }
 }
 @media screen and (max-width: 550px) {
   .hero-link {
-    top: 77%;
+    top: 55%;
+  }
+}
+@media screen and (max-width: 367px) {
+  .hero-link {
+    top: 70%;
   }
 }
 .hero-link:after {
@@ -1362,8 +1367,8 @@ h3 {
   aspect-ratio: 1440/400;
   max-height: 400px;
   width: 100%;
-  -o-object-position: 100% 35%;
-     object-position: 100% 35%;
+  -o-object-position: 100% 0%;
+     object-position: 100% 0%;
 }
 @media screen and (max-width: 1023px) {
   .main .hero__bottom img {
