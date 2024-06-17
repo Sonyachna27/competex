@@ -58,6 +58,11 @@
   @media screen and (max-width:550px) {
 	top: 55%;
   }
+  @media screen and (max-width: 480px) {
+    .hero-link {
+        top: 62%;
+    }
+}
   @media screen and (max-width:367px) {
 	top: 70%;
   }
