@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 10,
       watchOverflow: true,
       loop: true,
-        // autoplay: {
-        //   delay: 0,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
         speed: 3000,
       breakpoints: {
         367: {
