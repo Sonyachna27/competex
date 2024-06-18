@@ -48,23 +48,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (actionSliderInit) {
     const sliderAction = new Swiper(".moveSlider", {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 10,
       watchOverflow: true,
       loop: true,
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 0,
+        //   disableOnInteraction: false,
+        // },
         speed: 3000,
       breakpoints: {
+        367: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
         550: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+          slidesPerView: 4,
+          spaceBetween: 10,
         },
         767: {
-          slidesPerView: 4,
-          spaceBetween: 20,
+          slidesPerView: 5,
+          spaceBetween: 10,
         },
         1023: {
           slidesPerView: 6,
